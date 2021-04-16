@@ -18,10 +18,10 @@ requirements:
   host:
     - python >=3.6
     - pip
-    - typing_extensions>=3.7.4.3 # [py<=38]
+    - typing_extensions >=3.7.4.3  # [py<=38]
   run:
     - python >=3.6
-    - typing_extensions>=3.7.4.3 # [py<=38]
+    - typing_extensions >=3.7.4.3  # [py<=38]
 
 test:
   commands:
