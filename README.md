@@ -333,5 +333,6 @@ Feedstock Maintainers
 =====================
 
 * [@hpomorski](https://github.com/hpomorski/)
+* [@joannasendorek](https://github.com/joannasendorek/)
 * [@zkrolikowski-vl](https://github.com/zkrolikowski-vl/)
 
