@@ -1,5 +1,5 @@
 {% set name = "pandas-stubs" %}
-{% set version = "1.2.0.62" %}
+{% set version = "1.4.2.220626" %}
 
 package:
   name: {{ name|lower }}
@@ -28,6 +28,12 @@ requirements:
     - python
     - poetry
     - typing_extensions >=4.2  # [py>=38]
+
+test:
+  commands:
+    - test -f $SP_DIR/pandas-stubs/_typing.pyi  # [unix]
+    - if not exist %SP_DIR%\\pandas-stubs\\_typing.pyi exit 1  # [win]
+
 
 about:
   home: https://github.com/pandas-dev/pandas-stubs
