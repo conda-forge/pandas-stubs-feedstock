@@ -1,5 +1,5 @@
 {% set name = "pandas-stubs" %}
-{% set version = "1.2.0.62" %}
+{% set version = "1.4.2.220626" %}
 
 package:
   name: {{ name|lower }}
@@ -7,40 +7,43 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 89c022dad41d28e26a1290eb1585db1042ccb09e6951220bb5c9146e2f795147
+  sha256: a9096caa76c3705be7ce5a14e6881bb8e8c2cd097da4b2d9376260f584f36be5
 
 build:
   number: 0
-  skip: true  # [py<36]
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - poetry
   host:
     - python
     - pip
-    - typing_extensions >=3.7.4.3  # [py<=38]
+    - poetry
+    - typing_extensions >=4.2  # [py>=38]
   run:
     - python
-    - typing_extensions >=3.7.4.3  # [py<=38]
+    - poetry
+    - typing_extensions >=4.2  # [py>=38]
 
 test:
   commands:
-    - test -f $SP_DIR/pandas/py.typed  # [unix]
-    - if not exist %SP_DIR%\\pandas\\py.typed exit 1  # [win]
+    - test -f $SP_DIR/pandas-stubs/_typing.pyi  # [unix]
+    - if not exist %SP_DIR%\\pandas-stubs\\_typing.pyi exit 1  # [win]
+
+
 about:
-  home: https://github.com/VirtusLab/pandas-stubs
-  license: MIT
-  license_family: MIT
+  home: https://github.com/pandas-dev/pandas-stubs
+  license: BSD-3-Clause
   license_file: LICENSE
   summary: Collection of Pandas stub files
   description: |
-    Collection of Pandas stub files initially generated using stubgen,
-    fixed when necessary and then partially completed.
-  doc_url: https://github.com/VirtusLab/pandas-stubs
-  dev_url: https://github.com/VirtusLab/pandas-stubs
+    Collection of Pandas stub files supported by the pandas team
+  doc_url: https://github.com/pandas-dev/pandas-stubs
+  dev_url: https://github.com/pandas-dev/pandas-stubs
 
 extra:
   recipe-maintainers:
