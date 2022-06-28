@@ -10,24 +10,19 @@ source:
   sha256: a9096caa76c3705be7ce5a14e6881bb8e8c2cd097da4b2d9376260f584f36be5
 
 build:
-  number: 0
-  skip: true  # [py<38]
+  number: 1
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - poetry
   host:
-    - python
+    - python >=3.8
     - pip
     - poetry
-    - typing_extensions >=4.2  # [py>=38]
+    - typing_extensions >=4.2
   run:
-    - python
-    - poetry
-    - typing_extensions >=4.2  # [py>=38]
+    - python >=3.8
+    - typing_extensions >=4.2
 
 test:
   commands:
