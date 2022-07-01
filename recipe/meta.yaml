@@ -21,7 +21,7 @@ requirements:
     - python >=3.8
   run:
     - matplotlib-base
-    - pandas {{ pandas_version }}
+    - pandas ={{ pandas_version }}
     - python >=3.8
     - typing_extensions >=4.2
 
