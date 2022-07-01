@@ -1,34 +1,37 @@
-{% set name = "pandas-stubs" %}
 {% set version = "1.4.2.220626" %}
+{% set pandas_version = version.rsplit(".", 1)[0] %}
 
 package:
-  name: {{ name|lower }}
+  name: pandas-stubs
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/p/pandas-stubs/pandas-stubs-{{ version }}.tar.gz
   sha256: a9096caa76c3705be7ce5a14e6881bb8e8c2cd097da4b2d9376260f584f36be5
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.8
     - pip
-    - poetry
-    - typing_extensions >=4.2
+    - poetry-core
+    - python >=3.8
   run:
+    - matplotlib-base
+    - pandas {{ pandas_version }}
     - python >=3.8
     - typing_extensions >=4.2
 
 test:
+  requires:
+    - pip
   commands:
+    - pip check
     - test -f $SP_DIR/pandas-stubs/_typing.pyi  # [unix]
     - if not exist %SP_DIR%\\pandas-stubs\\_typing.pyi exit 1  # [win]
-
 
 about:
   home: https://github.com/pandas-dev/pandas-stubs
