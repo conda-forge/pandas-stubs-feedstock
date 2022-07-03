@@ -19,10 +19,8 @@ requirements:
     - python >=3.8
     - pip
     - poetry
-    - typing_extensions >=4.2
   run:
     - python >=3.8
-    - typing_extensions >=4.2
 
 test:
   commands:
