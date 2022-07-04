@@ -1,5 +1,5 @@
 {% set name = "pandas-stubs" %}
-{% set version = "1.4.3.220702" %}
+{% set version = "1.4.3.220703" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1a8c22f096655f25c2cf18258b2cdecd339da9bc50d251060604cb67b7958050
+  sha256: d52c2fbd38954eaddcfc12bed11150ccfb382f31828fa18e6aaa6ba3fee1e692
 
 build:
   number: 0
