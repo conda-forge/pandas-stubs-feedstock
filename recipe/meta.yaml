@@ -10,7 +10,7 @@ source:
   sha256: 175ed68aeb0dcd0a1c430452fba3091fdea1093e7e157ede71a8979f9a29edd3
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -23,10 +23,12 @@ requirements:
     - python >=3.8
 
 test:
+  requires:
+    - pip
   commands:
+    - pip check
     - test -f $SP_DIR/pandas-stubs/_typing.pyi  # [unix]
     - if not exist %SP_DIR%\\pandas-stubs\\_typing.pyi exit 1  # [win]
-
 
 about:
   home: https://github.com/pandas-dev/pandas-stubs
