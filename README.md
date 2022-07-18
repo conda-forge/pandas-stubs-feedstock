@@ -151,7 +151,5 @@ Feedstock Maintainers
 =====================
 
 * [@Dr-Irv](https://github.com/Dr-Irv/)
-* [@hpomorski](https://github.com/hpomorski/)
-* [@joannasendorek](https://github.com/joannasendorek/)
-* [@zkrolikowski-vl](https://github.com/zkrolikowski-vl/)
+* [@twoertwein](https://github.com/twoertwein/)
 

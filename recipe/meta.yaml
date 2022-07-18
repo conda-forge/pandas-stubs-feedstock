@@ -1,5 +1,5 @@
 {% set name = "pandas-stubs" %}
-{% set version = "1.4.3.220710" %}
+{% set version = "1.4.3.220718" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 57afeb068d56012ff9813e61ebdc36473fa225ff1258fc3e4783e524101f4ad0
+  sha256: b1ce4d805c56b98c3453935bbedc46b96d169701137c4e03cff7d22731c6bad5
 
 build:
   number: 0
@@ -21,6 +21,7 @@ requirements:
     - poetry
   run:
     - python >=3.8
+    - types-pytz >=2022.1.1
 
 test:
   requires:
