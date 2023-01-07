@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d6bab9f373ff3c309bf560065d230a38ce4dcd22368be393fad6eb353d102b7c
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ pandas_stubs }}-{{ version }}.tar.gz
+  sha256: c78e433aca82577ce4a9fefc0d78cd26828dd95f8b1612416babff1b6957a22a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
