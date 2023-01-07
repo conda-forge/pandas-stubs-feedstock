@@ -1,5 +1,5 @@
 {% set name = "pandas-stubs" %}
-{% set version = "1.5.2.221124" %}
+{% set version = "1.5.2.230105" %}
 
 package:
   name: {{ name|lower }}
