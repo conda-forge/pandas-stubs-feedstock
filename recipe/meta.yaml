@@ -10,7 +10,7 @@ source:
   sha256: 624c7bb06d38145a44b61be459ccd19b038e0bf20364a025ecaab78fea65e858
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >=3.8
     - types-pytz >=2022.1.1
-    - numpy >= 1.24.3
+    - numpy >=1.24.3
 
 test:
   requires:
