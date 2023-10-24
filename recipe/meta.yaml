@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.9
     - pip
     - poetry
   run:
-    - python >=3.8
+    - python >=3.9
     - types-pytz >=2022.1.1
     - numpy >=1.26.0
 
