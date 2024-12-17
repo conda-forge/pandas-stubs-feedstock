@@ -10,23 +10,24 @@ source:
   sha256: cf819383c6d9ae7d4dabf34cd47e1e45525bb2f312e6ad2939c2c204cb708acd
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
     - poetry
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - types-pytz >=2022.1.1
     - numpy >=1.26.0
 
 test:
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - test -f $SP_DIR/pandas-stubs/_typing.pyi  # [unix]
